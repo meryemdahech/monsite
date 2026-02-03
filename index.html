@@ -1,37 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Permutation</title>
+  <title>Meryem Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      text-align: center;
+      padding-top: 80px;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    button {
+      padding: 12px 20px;
+      border: none;
+      background: #ff5f7e;
+      color: white;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+  </style>
+   <script>
+    function afficherMax() {
+      var n1 = document.getElementById("n1").value;
+      var n2 = document.getElementById("n2").value;
 
-  <script>
-    function calculer() {
-      var var1 = document.getElementById("var1").value;
-      var var2 = document.getElementById("var2").value;
-
-      if (var1 == "" || var2 == "") {
+      if (n1 == "" || n2 == "") {
         alert("Remplir les deux champs !");
         return;
       }
+      n1 = Number(n1);
+      n2 = Number(n2);
 
-      // permutation sans variable temp
-      [var1, var2] = [var2, var1];
-
-      document.getElementById("var1").value = var1;
-      document.getElementById("var2").value = var2;
+      if (isNaN(n1) || isNaN(n2)) {
+        alert("Entrer des nombres seulement !");
+        return;
+      }
+      if (n1 > n2) {
+        alert("Le maximum est : " + n1);
+      } else {
+        alert("Le maximum est : " + n2);
+      }
     }
   </script>
 </head>
-
+  
 <body>
-  <h3>Permutation de deux chaines</h3>
+ <h3>Maximum de deux nombres</h3>
 
-  var1 :
-  <input type="text" id="var1"><br><br>
+  Nombre 1 :
+  <input type="text" id="n1"><br><br>
 
-  var2 :
-  <input type="text" id="var2"><br><br>
+  Nombre 2 :
+  <input type="text" id="n2"><br><br>
 
-  <input type="button" value="Calculer" onclick="calculer()">
+  <input type="button" value="Afficher le maximum" onclick="afficherMax()">
+ 
 </body>
 </html>
