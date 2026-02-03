@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mon site</title>
+  <meta charset="UTF-8">
+  <title>Permutation</title>
+
+  <script>
+    function calculer() {
+      var var1 = document.getElementById("var1").value;
+      var var2 = document.getElementById("var2").value;
+
+      if (var1 == "" || var2 == "") {
+        alert("Remplir les deux champs !");
+        return;
+      }
+
+      // permutation sans variable temp
+      [var1, var2] = [var2, var1];
+
+      document.getElementById("var1").value = var1;
+      document.getElementById("var2").value = var2;
+    }
+  </script>
 </head>
+
 <body>
-  <h1>Bienvenue</h1>
-  <p>هذا أوّل موقع متاعي</p>
+  <h3>Permutation de deux chaines</h3>
+
+  var1 :
+  <input type="text" id="var1"><br><br>
+
+  var2 :
+  <input type="text" id="var2"><br><br>
+
+  <input type="button" value="Calculer" onclick="calculer()">
 </body>
 </html>
